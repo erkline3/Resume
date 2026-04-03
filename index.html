@@ -34,7 +34,7 @@
         }
 
         .sidebar section {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .sidebar ul {
@@ -45,7 +45,7 @@
 
         .sidebar li {
             margin-bottom: 6px;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .sidebar a {
@@ -56,7 +56,9 @@
         /* Main content */
         .main {
             padding: 48px;
-            background: #fafafa; /* light grey for readability */
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
         }
 
         .main h1 {
@@ -66,15 +68,15 @@
         }
 
         .main h2 {
-            margin-top: 40px;
+            margin-top: 32px;
             font-size: 24px;
             border-bottom: 2px solid #ddd;
-            padding-bottom: 6px;
+            padding-bottom: 4px;
             color: #2563eb;
         }
 
         .job, .project {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .job h3, .project h3 {
@@ -85,11 +87,11 @@
         .job .meta, .project .meta {
             font-size: 14px;
             color: #555;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .job ul, .project ul {
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .job li, .project li {
@@ -100,7 +102,7 @@
             text-align: center;
             font-size: 12px;
             color: #777;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         /* Mobile responsiveness */
@@ -110,6 +112,85 @@
             }
             .sidebar, .main {
                 padding: 24px;
+            }
+        }
+
+        /* ============================
+           PRINT‑OPTIMIZED ONE‑PAGE LAYOUT
+           ============================ */
+        @media print {
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                margin: 0;
+                size: letter;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: #ffffff !important;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 215px 1fr !important;
+            }
+
+            .sidebar {
+                padding: 14px !important;
+            }
+
+            .main {
+                padding: 18px !important;
+            }
+
+            /* Typography scaling */
+            h1 {
+                font-size: 25px !important;
+                margin-bottom: 4px !important;
+            }
+
+            h2 {
+                font-size: 17px !important;
+                margin-top: 14px !important;
+                padding-bottom: 3px !important;
+            }
+
+            h3 {
+                font-size: 14px !important;
+            }
+
+            p, li {
+                font-size: 10.5px !important;
+                line-height: 1.28 !important;
+            }
+
+            li {
+                margin-bottom: 2px !important;
+            }
+
+            .job, .project {
+                margin-bottom: 12px !important;
+                page-break-inside: avoid;
+            }
+
+            .sidebar section {
+                margin-bottom: 14px !important;
+            }
+
+            h2, h3 {
+                page-break-after: avoid;
+            }
+
+            /* Footer tightened */
+            footer {
+                margin-top: 6px !important;
+                font-size: 9.5px !important;
             }
         }
     </style>
@@ -141,16 +222,16 @@
         <section>
             <h2>Skills</h2>
             <ul>
-                <li>IT Audit & Compliance,</li>
-                <li>NIST RMF, FISMA,</li>
-                <li>Internal Controls (GAGAS),</li>
-                <li>SQL, R, Python,</li>
-                <li>PowerBI, Power Query,</li>
-                <li>Tableau, Excel,</li>
-                <li>Linux, PowerShell,</li>
-                <li>Data Modeling & Visualization,</li>
-                <li>Digital Forensics,</li>
-                <li>Machine Learning,</li>
+                <li>IT Audit & Compliance</li>
+                <li>NIST RMF, FISMA</li>
+                <li>Internal Controls (GAGAS)</li>
+                <li>SQL, R, Python</li>
+                <li>PowerBI, Power Query</li>
+                <li>Tableau, Excel</li>
+                <li>Linux, PowerShell</li>
+                <li>Data Modeling & Visualization</li>
+                <li>Digital Forensics</li>
+                <li>Machine Learning</li>
                 <li>Prompt Engineering</li>
             </ul>
         </section>
@@ -167,6 +248,15 @@
                     Cum Laude, President’s List<br>
                     Middle Georgia State University (2020)
                 </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <ul>
+                <li>English – Native</li>
+                <li>Spanish – Fluent</li>
+                <li>Portuguese – Fluent</li>
             </ul>
         </section>
     </aside>
@@ -192,12 +282,12 @@
                 Aug 2023 – Present
             </div>
             <ul>
-                <li>Conduct Security Assessment & Authorization (SA&A) audits using NIST SP 800‑53 and RMF controls.</li>
-                <li>Evaluate system security documentation, POA&Ms, and continuous monitoring artifacts.</li>
-                <li>Developed a Power Query analytics guide adopted office‑wide; received commendation and bonus.</li>
-                <li>Analyze datasets of 100k+ records to identify anomalies, fraud indicators, and internal control weaknesses.</li>
-                <li>Selected as P.E.E.R. mentor for onboarding and technical development of new auditors.</li>
-                <li>Contributed to online sports betting fraud risk project elevated to National Anti‑Fraud Committee.</li>
+                <li>Conduct SA&A audits using NIST SP 800‑53 and RMF controls to assess system security and compliance.</li>
+                <li>Evaluate system documentation, POA&Ms, and monitoring artifacts to identify control gaps.</li>
+                <li>Developed a Power Query analytics guide adopted office‑wide; earned formal commendation.</li>
+                <li>Analyze large datasets to identify anomalies, fraud indicators, and control weaknesses.</li>
+                <li>Serve as P.E.E.R. mentor supporting onboarding and technical development of new auditors.</li>
+                <li>Contributed to online sports betting fraud‑risk project elevated to National Anti‑Fraud Committee.</li>
             </ul>
         </div>
 
@@ -207,10 +297,10 @@
                 Jan 2021 – Aug 2023
             </div>
             <ul>
-                <li>Completed IT system audits including Defense Travel System and personnel records.</li>
+                <li>Completed IT system audits including Defense Travel System and personnel record workflows.</li>
                 <li>Received Letter of Recognition for contributions to IT spend audit project.</li>
-                <li>Produced audit findings identifying potential cost savings and control deficiencies in system workflows.</li>
-                <li>Evaluated PII/PHI handling practices and identified gaps in system‑level controls and documentation.</li>
+                <li>Produced findings identifying cost‑saving opportunities and control deficiencies.</li>
+                <li>Evaluated PII/PHI handling practices and identified gaps in system‑level controls.</li>
                 <li>Completed DoD Financial Management Certification Level II.</li>
             </ul>
         </div>
@@ -221,10 +311,10 @@
             <h3>Transaction Slicer – Interactive Data Parsing Tool</h3>
             <div class="meta">JavaScript Frontend • Python Backend • CSV Processing</div>
             <ul>
-                <li>Developed a web‑based tool for slicing raw bank transaction text into structured fields such as date, amount, and description.</li>
-                <li>Built an intuitive UI allowing users to highlight and assign text segments to labeled data buckets.</li>
-                <li>Implemented a Python/Flask backend to load CSV files, serve data to the UI, and prepare structured outputs for audit workflows.</li>
-                <li>Designed the system to support audit‑grade reproducibility, modularity, and future machine‑learning enhancements.</li>
+                <li>Developed a web‑based tool to convert raw bank transaction text into structured fields.</li>
+                <li>Built an intuitive UI enabling users to highlight and assign text segments to labeled data buckets.</li>
+                <li>Implemented a Python/Flask backend to load CSVs, serve data, and generate structured outputs.</li>
+                <li>Designed the system for audit‑grade reproducibility, modularity, and future ML integration.</li>
             </ul>
         </div>
 
@@ -232,10 +322,10 @@
             <h3>R Data Cleaning & Wrangling Workflows</h3>
             <div class="meta">R • Tidyverse • Data Validation</div>
             <ul>
-                <li>Built reproducible R scripts for cleaning, validating, and transforming structured and semi‑structured datasets.</li>
-                <li>Used dplyr, tidyr, and stringr to standardize inconsistent fields, detect anomalies, and prepare data for analysis.</li>
-                <li>Developed validation steps to isolate outliers, confirm dataset integrity, and ensure clean, analysis‑ready outputs.</li>
-                <li>Created and used a custom Linux‑hosted data generator to produce realistic, messy financial transaction data for testing and refinement of cleaning workflows.</li>
+                <li>Built reproducible R scripts for cleaning, validating, and transforming structured and semi‑structured data.</li>
+                <li>Used dplyr, tidyr, and stringr to standardize fields, detect anomalies, and prepare datasets for analysis.</li>
+                <li>Developed validation steps to isolate outliers, confirm integrity, and ensure analysis‑ready outputs.</li>
+                <li>Created a Linux‑hosted data generator producing realistic financial transaction data for testing workflows.</li>
             </ul>
         </div>
 
@@ -243,13 +333,9 @@
             <h3>Data Visualization & Tableau Dashboards</h3>
             <div class="meta">Tableau • Data Storytelling • Public Data Analysis</div>
             <ul>
-                <li>Designed interactive Tableau dashboards incorporating both quantitative and qualitative public data sources.</li>
-                <li>Used dashboards to support presentations and written reports, improving clarity and communication of analytical findings.</li>
-                <li>Portfolio available on Tableau Public: 
-                    <a href="https://public.tableau.com/app/profile/earl.kline/vizzes" target="_blank">
-                        View Dashboards
-                    </a>
-                </li>
+                <li>Designed interactive Tableau dashboards integrating quantitative and qualitative public data.</li>
+                <li>Used dashboards to support presentations and reports, improving clarity of findings.</li>
+                <li>Portfolio available on Tableau Public.</li>
             </ul>
         </div>
 
