@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Earl R. Kline – IT Auditor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             margin: 0;
@@ -13,7 +15,7 @@
 
         .container {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr;
             min-height: 100vh;
         }
 
@@ -21,7 +23,7 @@
         .sidebar {
             background: #1f2937;
             color: #fff;
-            padding: 30px;
+            padding: 32px;
         }
 
         .sidebar h2 {
@@ -32,7 +34,7 @@
         }
 
         .sidebar section {
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .sidebar ul {
@@ -46,15 +48,20 @@
             line-height: 1.4;
         }
 
+        .sidebar a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
         /* Main content */
         .main {
-            padding: 40px;
-            background: #ffffff;
+            padding: 48px;
+            background: #fafafa; /* light grey for readability */
         }
 
         .main h1 {
             margin-top: 0;
-            font-size: 34px;
+            font-size: 36px;
             color: #111;
         }
 
@@ -63,35 +70,47 @@
             font-size: 24px;
             border-bottom: 2px solid #ddd;
             padding-bottom: 6px;
+            color: #2563eb;
         }
 
-        .job {
-            margin-bottom: 25px;
+        .job, .project {
+            margin-bottom: 28px;
         }
 
-        .job h3 {
+        .job h3, .project h3 {
             margin: 0;
             font-size: 20px;
         }
 
-        .job .meta {
+        .job .meta, .project .meta {
             font-size: 14px;
             color: #555;
             margin-bottom: 8px;
         }
 
-        .job ul {
+        .job ul, .project ul {
             margin-top: 8px;
         }
 
-        .job li {
+        .job li, .project li {
             margin-bottom: 6px;
         }
 
-        .contact {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar, .main {
+                padding: 24px;
+            }
         }
     </style>
 </head>
@@ -104,9 +123,10 @@
         <section class="contact">
             <h2>Contact</h2>
             <p><strong>Dallas, TX</strong></p>
-            <p>Telephone: 229-300-9189</p>
-            <p>Email: erkline3@gmail.com</p>
-            <p>IT Auditor, GS‑12 (2210)</p>
+            <p>Telephone: 229‑300‑9189</p>
+            <p>Email: <a href="mailto:erkline3@gmail.com">erkline3@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/erkline3" target="_blank">github.com/erkline3</a></p>
+            <p>Tableau: <a href="https://public.tableau.com/app/profile/earl.kline/vizzes" target="_blank">Tableau Public Profile</a></p>
         </section>
 
         <section>
@@ -114,23 +134,23 @@
             <ul>
                 <li>Certified Information Systems Auditor (CISA)</li>
                 <li>DoD 8570/8140 IAM Level III</li>
-                <li>DoD FM Certification Level 2</li>
+                <li>DoD FM Certification Level II</li>
             </ul>
         </section>
 
         <section>
             <h2>Skills</h2>
             <ul>
-                <li>IT Audit & Compliance</li>
-                <li>NIST RMF, FISMA</li>
-                <li>Internal Controls (GAGAS)</li>
-                <li>SQL, R, Python</li>
-                <li>PowerBI, Power Query</li>
-                <li>Tableau, Excel</li>
-                <li>Linux, PowerShell</li>
-                <li>Data Modeling & Visualization</li>
-                <li>Digital Forensics</li>
-                <li>Machine Learning</li>
+                <li>IT Audit & Compliance,</li>
+                <li>NIST RMF, FISMA,</li>
+                <li>Internal Controls (GAGAS),</li>
+                <li>SQL, R, Python,</li>
+                <li>PowerBI, Power Query,</li>
+                <li>Tableau, Excel,</li>
+                <li>Linux, PowerShell,</li>
+                <li>Data Modeling & Visualization,</li>
+                <li>Digital Forensics,</li>
+                <li>Machine Learning,</li>
                 <li>Prompt Engineering</li>
             </ul>
         </section>
@@ -157,11 +177,11 @@
 
         <h2>Professional Summary</h2>
         <p>
-            Five years of experience conducting IT and cybersecurity audits under Generally Accepted Government 
-            Auditing Standards (GAGAS). Specialized in NIST RMF, FISMA compliance, internal controls, and system 
-            security assessments across DoD and federal agencies. Certified Information Systems Auditor (CISA) and 
-            DoD 8570/8140 IAM Level III qualified. Proven ability to analyze complex systems, evaluate technical 
-            controls, and deliver actionable audit findings to leadership.
+            IT Auditor with five years of experience conducting cybersecurity and compliance audits under 
+            Generally Accepted Government Auditing Standards (GAGAS). Specialized in NIST RMF, FISMA, internal 
+            controls, and system security assessments across DoD and federal agencies. CISA‑certified and 
+            DoD 8570/8140 IAM Level III qualified. Known for translating complex technical risks into clear, 
+            actionable findings and developing analytics solutions adopted across audit teams.
         </p>
 
         <h2>Experience</h2>
@@ -174,8 +194,8 @@
             <ul>
                 <li>Conduct Security Assessment & Authorization (SA&A) audits using NIST SP 800‑53 and RMF controls.</li>
                 <li>Evaluate system security documentation, POA&Ms, and continuous monitoring artifacts.</li>
-                <li>Developed and delivered a Power Query analytics guide adopted office‑wide; received commendation and bonus.</li>
-                <li>Analyze large datasets to identify anomalies, fraud indicators, and internal control weaknesses.</li>
+                <li>Developed a Power Query analytics guide adopted office‑wide; received commendation and bonus.</li>
+                <li>Analyze datasets of 100k+ records to identify anomalies, fraud indicators, and internal control weaknesses.</li>
                 <li>Selected as P.E.E.R. mentor for onboarding and technical development of new auditors.</li>
                 <li>Contributed to online sports betting fraud risk project elevated to National Anti‑Fraud Committee.</li>
             </ul>
@@ -187,13 +207,55 @@
                 Jan 2021 – Aug 2023
             </div>
             <ul>
-                <li>Completed multiple IT system audits including Defense Travel System and personnel records.</li>
+                <li>Completed IT system audits including Defense Travel System and personnel records.</li>
                 <li>Received Letter of Recognition for contributions to IT spend audit project.</li>
                 <li>Produced audit findings identifying potential cost savings and control deficiencies in system workflows.</li>
                 <li>Evaluated PII/PHI handling practices and identified gaps in system‑level controls and documentation.</li>
-                <li>Completed DoD Financial Management Certification Level 2.</li>
+                <li>Completed DoD Financial Management Certification Level II.</li>
             </ul>
         </div>
+
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Transaction Slicer – Interactive Data Parsing Tool</h3>
+            <div class="meta">JavaScript Frontend • Python Backend • CSV Processing</div>
+            <ul>
+                <li>Developed a web‑based tool for slicing raw bank transaction text into structured fields such as date, amount, and description.</li>
+                <li>Built an intuitive UI allowing users to highlight and assign text segments to labeled data buckets.</li>
+                <li>Implemented a Python/Flask backend to load CSV files, serve data to the UI, and prepare structured outputs for audit workflows.</li>
+                <li>Designed the system to support audit‑grade reproducibility, modularity, and future machine‑learning enhancements.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h3>R Data Cleaning & Wrangling Workflows</h3>
+            <div class="meta">R • Tidyverse • Data Validation</div>
+            <ul>
+                <li>Built reproducible R scripts for cleaning, validating, and transforming structured and semi‑structured datasets.</li>
+                <li>Used dplyr, tidyr, and stringr to standardize inconsistent fields, detect anomalies, and prepare data for analysis.</li>
+                <li>Developed validation steps to isolate outliers, confirm dataset integrity, and ensure clean, analysis‑ready outputs.</li>
+                <li>Created and used a custom Linux‑hosted data generator to produce realistic, messy financial transaction data for testing and refinement of cleaning workflows.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h3>Data Visualization & Tableau Dashboards</h3>
+            <div class="meta">Tableau • Data Storytelling • Public Data Analysis</div>
+            <ul>
+                <li>Designed interactive Tableau dashboards incorporating both quantitative and qualitative public data sources.</li>
+                <li>Used dashboards to support presentations and written reports, improving clarity and communication of analytical findings.</li>
+                <li>Portfolio available on Tableau Public: 
+                    <a href="https://public.tableau.com/app/profile/earl.kline/vizzes" target="_blank">
+                        View Dashboards
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            Last updated: April 2026
+        </footer>
 
     </main>
 </div>
