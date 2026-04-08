@@ -1,0 +1,442 @@
+/* =========================================
+   Earl R. Kline – Resume Theme (external)
+   Modern, grid-based, print-optimized
+   ========================================= */
+
+/* -------------------------
+   Root color system & tokens
+   ------------------------- */
+:root {
+    --primary: #1f2937; /* sidebar + card borders */
+    --heading-blue: #2563eb; /* restored lighter blue for section headers */
+    --primary-soft: #e5e7eb;
+    --accent: #0ea5e9;
+
+    --bg-page: #f3f4f6;
+    --bg-main: #f9fafb;
+    --bg-sidebar: #1f2937;
+    --bg-card: #ffffff;
+
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --text-inverse: #f9fafb;
+
+    --border-subtle: #e5e7eb;
+
+    --radius-sm: 4px;
+    --radius-md: 6px;
+
+    --shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.12);
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+}
+
+/* -------------------------
+   Base typography & layout
+   ------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* Max-width wrapper for main content */
+.container {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: var(--space-7);
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-7) var(--space-4);
+}
+
+/* -------------------------
+   Sidebar
+   ------------------------- */
+
+.sidebar {
+    background: var(--bg-sidebar);
+    color: var(--text-inverse);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.sidebar h2 {
+    margin: 0 0 var(--space-2);
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+    padding-bottom: var(--space-1);
+}
+
+.sidebar section {
+    margin: 0;
+}
+
+.sidebar p {
+    margin: 0 0 var(--space-1);
+    font-size: 14px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: var(--space-1);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.sidebar a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus-visible {
+    color: #bfdbfe;
+    text-decoration: underline;
+}
+
+/* -------------------------
+   Main content
+   ------------------------- */
+
+.main {
+    background: var(--bg-main);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Max-width for readable text */
+.main p {
+    margin: 0 0 var(--space-4);
+    max-width: 700px;
+}
+
+/* Headings */
+.main h1 {
+    margin: 0 0 var(--space-2);
+    font-size: 32px;
+    letter-spacing: 0.02em;
+}
+
+.main h2 {
+    margin: var(--space-3) 0 var(--space-2);
+    font-size: 22px;
+    color: var(--heading-blue); /* restored lighter blue */
+    border-bottom: 2px solid var(--border-subtle);
+    padding-bottom: var(--space-1);
+}
+
+.main h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Meta text (job/org/date line) */
+.meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+    margin-bottom: var(--space-2);
+}
+
+/* -------------------------
+   Card style for jobs/projects
+   ------------------------- */
+
+.job,
+.project {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    border-left: 3px solid var(--primary); /* matches sidebar */
+    margin-bottom: var(--space-3);
+    transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+.job ul,
+.project ul {
+    margin: var(--space-2) 0 0;
+    padding-left: 20px;
+}
+
+.job li,
+.project li {
+    margin-bottom: var(--space-1);
+}
+
+/* Subtle micro-interactions on hover (web only) */
+.job:hover,
+.project:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    transform: translateY(-1px);
+    border-color: var(--accent);
+}
+
+/* -------------------------
+   Utility classes
+   ------------------------- */
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-small {
+    font-size: 13px;
+}
+
+.text-xs {
+    font-size: 12px;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: var(--space-1);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+    margin-bottom: var(--space-3);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+/* Web-only / print-only visibility */
+.web-only {
+    display: block;
+}
+
+.print-only {
+    display: none;
+}
+
+/* Example: web-only project preview badge */
+.project-preview-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* -------------------------
+   Footer
+   ------------------------- */
+
+footer {
+    margin-top: var(--space-3);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* -------------------------
+   Responsive behavior
+   ------------------------- */
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: var(--space-5) var(--space-3);
+    }
+
+    .sidebar,
+    .main {
+        border-radius: var(--radius-md);
+    }
+}
+
+/* -------------------------
+   Dark mode (prefers-color-scheme)
+   ------------------------- */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #020617;
+        color: #e5e7eb;
+    }
+
+    .container {
+        background: transparent;
+    }
+
+    .sidebar {
+        background: #1f2937;
+        color: #e5e7eb;
+        box-shadow: none;
+        border: 1px solid #1f2937;
+    }
+
+    .main {
+        background: #020617;
+        box-shadow: none;
+        border: 1px solid #1f2937;
+    }
+
+    .job,
+    .project {
+        background: #020617;
+        border-color: var(--primary);
+    }
+
+    footer {
+        color: #9ca3af;
+    }
+}
+
+/* -------------------------
+   Strengthened print system
+   ------------------------- */
+
+@media print {
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    @page {
+        size: letter;
+        margin: 0.4in 0.5in;
+    }
+
+    body {
+        background: #ffffff !important;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        grid-template-columns: 215px 1fr;
+        gap: 12px;
+    }
+
+    /* KEEP SIDEBAR COLOR IN PRINT */
+    .sidebar {
+        background: #1f2937 !important;
+        color: #ffffff !important;
+        padding: 10px !important;
+        border-radius: 0;
+        border-right: 1px solid #cccccc;
+    }
+
+    .main {
+        background: #ffffff !important;
+        padding: 12px 14px !important;
+        border-radius: 0;
+    }
+
+    /* Typography scaling for print */
+    .main h1 {
+        font-size: 22px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .main h2 {
+        font-size: 15px !important;
+        margin-top: 8px !important;
+        margin-bottom: 4px !important;
+        padding-bottom: 2px !important;
+        border-bottom-width: 1px !important;
+        color: #2563eb !important; /* ensure lighter blue prints */
+    }
+
+    .main h3 {
+        font-size: 13px !important;
+    }
+
+    p,
+    li,
+    .meta {
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+    }
+
+    .job,
+    .project {
+        padding: 6px 8px !important;
+        margin-bottom: 8px !important;
+        border-radius: 0 !important;
+        border-left-width: 2px !important;
+        page-break-inside: avoid;
+    }
+
+    ul,
+    li {
+        page-break-inside: avoid;
+    }
+
+    .sidebar section {
+        margin-bottom: 8px !important;
+    }
+
+    footer {
+        margin-top: 4px !important;
+        font-size: 9px !important;
+    }
+
+    /* Visibility controls */
+    .web-only {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+}
