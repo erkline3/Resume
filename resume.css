@@ -7,8 +7,8 @@
    Root color system & tokens
    ------------------------- */
 :root {
-    --primary: #1f2937; /* sidebar + card borders */
-    --heading-blue: #2563eb; /* restored lighter blue for section headers */
+    --primary: #1f2937;
+    --heading-blue: #2563eb;
     --primary-soft: #e5e7eb;
     --accent: #0ea5e9;
 
@@ -142,13 +142,11 @@ body {
     gap: var(--space-4);
 }
 
-/* Max-width for readable text */
 .main p {
     margin: 0 0 var(--space-4);
     max-width: 700px;
 }
 
-/* Headings */
 .main h1 {
     margin: 0 0 var(--space-2);
     font-size: 32px;
@@ -158,7 +156,7 @@ body {
 .main h2 {
     margin: var(--space-3) 0 var(--space-2);
     font-size: 22px;
-    color: var(--heading-blue); /* restored lighter blue */
+    color: var(--heading-blue);
     border-bottom: 2px solid var(--border-subtle);
     padding-bottom: var(--space-1);
 }
@@ -168,7 +166,6 @@ body {
     font-size: 18px;
 }
 
-/* Meta text (job/org/date line) */
 .meta {
     font-size: 13px;
     color: var(--text-muted);
@@ -185,7 +182,7 @@ body {
     background: var(--bg-card);
     border-radius: var(--radius-md);
     padding: var(--space-3) var(--space-4);
-    border-left: 3px solid var(--primary); /* matches sidebar */
+    border-left: 3px solid var(--primary);
     margin-bottom: var(--space-3);
     transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
 }
@@ -201,7 +198,6 @@ body {
     margin-bottom: var(--space-1);
 }
 
-/* Subtle micro-interactions on hover (web only) */
 .job:hover,
 .project:hover {
     box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
@@ -249,27 +245,12 @@ body {
     margin-bottom: var(--space-4);
 }
 
-/* Web-only / print-only visibility */
 .web-only {
     display: block;
 }
 
 .print-only {
     display: none;
-}
-
-/* Example: web-only project preview badge */
-.project-preview-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--primary);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
 }
 
 /* -------------------------
@@ -284,61 +265,66 @@ footer {
 }
 
 /* -------------------------
-   Responsive behavior
+   Mobile layout (light mode only)
    ------------------------- */
 
 @media (max-width: 900px) {
+
     .container {
         grid-template-columns: 1fr;
-        padding: var(--space-5) var(--space-3);
-    }
-
-    .sidebar,
-    .main {
-        border-radius: var(--radius-md);
-    }
-}
-
-/* -------------------------
-   Dark mode (prefers-color-scheme)
-   ------------------------- */
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #020617;
-        color: #e5e7eb;
-    }
-
-    .container {
-        background: transparent;
+        padding: 16px 12px;
+        gap: 20px;
     }
 
     .sidebar {
-        background: #1f2937;
-        color: #e5e7eb;
-        box-shadow: none;
-        border: 1px solid #1f2937;
+        padding: 16px;
+        border-radius: 8px;
+        gap: 16px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+    }
+
+    .sidebar p,
+    .sidebar li {
+        font-size: 14px;
     }
 
     .main {
-        background: #020617;
-        box-shadow: none;
-        border: 1px solid #1f2937;
+        padding: 16px;
+        border-radius: 8px;
+        gap: 16px;
+    }
+
+    .main h1 {
+        font-size: 26px;
+    }
+
+    .main h2 {
+        font-size: 18px;
+    }
+
+    .main h3 {
+        font-size: 16px;
+    }
+
+    .main p,
+    .main li,
+    .meta {
+        font-size: 14px;
+        line-height: 1.45;
     }
 
     .job,
     .project {
-        background: #020617;
-        border-color: var(--primary);
-    }
-
-    footer {
-        color: #9ca3af;
+        padding: 12px 14px;
+        margin-bottom: 14px;
     }
 }
 
 /* -------------------------
-   Strengthened print system
+   PRINT MODE — One-page PDF
    ------------------------- */
 
 @media print {
@@ -352,7 +338,7 @@ footer {
 
     @page {
         size: letter;
-        margin: 0.4in 0.5in;
+        margin: 0.35in 0.45in;
     }
 
     body {
@@ -363,75 +349,72 @@ footer {
         max-width: none;
         margin: 0;
         padding: 0;
-        grid-template-columns: 215px 1fr;
-        gap: 12px;
+        grid-template-columns: 200px 1fr !important;
+        gap: 10px !important;
     }
 
-    /* KEEP SIDEBAR COLOR IN PRINT */
     .sidebar {
         background: #1f2937 !important;
         color: #ffffff !important;
-        padding: 10px !important;
+        padding: 8px !important;
         border-radius: 0;
         border-right: 1px solid #cccccc;
     }
 
     .main {
         background: #ffffff !important;
-        padding: 12px 14px !important;
+        padding: 10px 12px !important;
         border-radius: 0;
     }
 
-    /* Typography scaling for print */
     .main h1 {
-        font-size: 22px !important;
-        margin-bottom: 4px !important;
+        font-size: 20px !important;
+        margin-bottom: 3px !important;
     }
 
     .main h2 {
-        font-size: 15px !important;
-        margin-top: 8px !important;
-        margin-bottom: 4px !important;
+        font-size: 14px !important;
+        margin-top: 6px !important;
+        margin-bottom: 3px !important;
         padding-bottom: 2px !important;
         border-bottom-width: 1px !important;
-        color: #2563eb !important; /* ensure lighter blue prints */
+        color: #2563eb !important;
     }
 
     .main h3 {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
 
     p,
     li,
     .meta {
-        font-size: 10px !important;
-        line-height: 1.25 !important;
+        font-size: 9.5px !important;
+        line-height: 1.22 !important;
     }
 
     .job,
     .project {
-        padding: 6px 8px !important;
-        margin-bottom: 8px !important;
+        padding: 5px 7px !important;
+        margin-bottom: 6px !important;
         border-radius: 0 !important;
         border-left-width: 2px !important;
-        page-break-inside: avoid;
+        page-break-inside: avoid !important;
     }
 
     ul,
     li {
-        page-break-inside: avoid;
+        page-break-inside: avoid !important;
     }
 
     .sidebar section {
-        margin-bottom: 8px !important;
+        margin-bottom: 6px !important;
     }
 
     footer {
-        margin-top: 4px !important;
-        font-size: 9px !important;
+        margin-top: 3px !important;
+        font-size: 8.5px !important;
     }
 
-    /* Visibility controls */
     .web-only {
         display: none !important;
     }
